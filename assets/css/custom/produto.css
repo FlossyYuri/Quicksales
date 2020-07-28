@@ -1,0 +1,106 @@
+
+/* Painel de 1 */
+
+/* Lado das imagens */
+
+.produto .images .carousel-item img {
+  /* max-width: 100%; */
+  height: 400px;
+}
+
+
+.seller-side .seller-name span{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.seller-side .seller-name i{
+  font-size: 20px;
+}
+
+
+.seller-side .seller-card .card-reveal .info-2 span {
+  width: 100%;
+}
+
+.seller-side .seller-card .card-reveal .btn:hover {
+  background-color: #ff9800 !important;
+}
+
+.seller-side .dicas {
+  padding: 0;
+}
+
+.seller-side .dicas .collapsible-header, .seller-side .dicas .collapsible-body, .seller-side .dicas ul {
+  border: none;
+  background-color: transparent;
+}
+
+.seller-side .price p {
+  background-color: white !important;
+  border-radius: 10px;
+}
+
+.seller-side .price * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.seller-side .price * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.seller-side .price p {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.produto .carousel-indicators img{
+  max-height: 100px !important;
+}
+
+.seller-side .dicas *{
+  background: transparent;
+  color: white;
+}
+
+.seller-side .dicas i{
+  font-size: 22px;
+}
+.seller-side .dicas span{
+  font-size: 14px;
+}
+
+.seller-side .dicas .accordion-title{
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+
+.revealed a.btn{
+  color: white;
+}
+.revealed a.btn span{
+  font-size: 14px;
+}
+
+.card.map-card{
+  overflow: hidden;
+}
+/* .card.map-card .card-body {
+  top: 0%;
+  height: 98%;
+}
+.card.map-card .card-body.closed {
+  margin-top: -7rem;
+} */
+
+ .card.white a div{
+  font-size: 14px;
+}
+
+.card-button a{
+  margin-top: -3rem;
+}

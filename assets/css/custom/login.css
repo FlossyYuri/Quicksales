@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12pt;
+}
+.login form,
+.register form {
+  padding-top: 5px !important;
+}
+.carousel-side {
+  border-radius: 15px;
+  background-color: #f44336;
+  z-index: 2;
+}
+
+.credentials-side {
+  overflow: hidden;
+  height: calc(100% - 50px);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 0;
+}
+
+.classic-tabs .nav-item a {
+  color: #f44336 !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+.classic-tabs .nav-item a.active {
+  background-color: #f4433611 !important;
+}
+
+.modal-title,
+.modal-dialog .md-form label,
+.modal-dialog i {
+  color: #f44336 !important;
+}
+
+.modal-dialog .md-form label.active,
+.modal-dialog i.active {
+  color: var(--orange) !important;
+}
+
+.home-button {
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 120px;
+  height: 40px;
+  border: 2px solid #f44336;
+  line-height: 36px;
+  border-radius: 6px;
+  background: none !important;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.home-button:hover {
+  border: 2px solid #ff9800;
+  color: #ff9800;
+}
+
+.login .main-pan {
+  height: 500px;
+  width: 600px;
+}
+.p20 {
+  height: 100%;
+}
+.sign {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.login .info,
+.login .carousel {
+  height: 500px !important;
+}
+
+.login .info .carousel-item {
+  padding: 10px !important;
+}
+
+.login .termos {
+  font-size: 10pt !important;
+}
+
+.login form .btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.login .redes-sociais .col:first-child {
+  padding-left: 0;
+}
+.login .redes-sociais .col:last-child {
+  padding-right: 0;
+}
+
+.login form .btn i {
+  margin-right: 10px;
+}
+
+.login .btn-facebook {
+  background-color: #2962ff !important;
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+}
+.login .btn-google {
+  background-color: #d50000 !important;
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+}
+.login .btn-facebook:hover {
+  background-color: #448aff !important;
+}
+.login .btn-google:hover {
+  background-color: #ff5252 !important;
+}
+.login .btn-login {
+  background-color: #ff5252;
+  color: white;
+}
+
+.login .btn-login:hover {
+  background-color: #ff9800 !important;
+}
+
+.modal {
+  border-radius: 15px;
+  border-bottom: 5px solid #f44336;
+}
+
+#imgPerfil {
+  border-radius: 300px;
+  display: inline;
+  cursor: pointer;
+}
+.tap-foto {
+  position: relative;
+}
+
+.tap-foto i {
+  position: absolute;
+  font-size: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  opacity: 0.8;
+  color: white;
+  background: #00000055;
+  padding: 50px;
+  border-radius: 100px;
+  pointer-events: none;
+}
+p-r {
+  position: relative;
+}
+
+@media only screen and (min-width: 545px) {
+  .tap-foto {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .login .main-pan {
+    width: 100%;
+  }
+  .carousel-side {
+    display: none;
+  }
+  .sign {
+    margin-left: 0px !important;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 100%;
+  }
+
+  .credentials-side {
+    border-radius: 15px;
+  }
+}
+
+input[type="email"]:focus:not([readonly]),
+input[type="password"]:focus:not([readonly]),
+input[type="tel"]:focus:not([readonly]),
+input[type="text"]:focus:not([readonly]),
+textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #ff9800 !important;
+  box-shadow: 0 1px 0 0 #ff9800 !important;
+}
+
+
+.form-check-input[type="checkbox"]:checked + label::before,
+label.btn input[type="checkbox"]:checked + label::before {
+  border-right: 2px solid #ff9800;
+  border-bottom: 2px solid #ff9800;
+}
+
+.md-form label.active {
+  color: #ff9800 !important;
+}
+
+.pattern-link{
+  color: #ff9800 !important;
+  
+}

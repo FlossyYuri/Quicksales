@@ -1,0 +1,172 @@
+array(4) {
+    [
+        "anuncios"
+    ]=> array(4) {
+        [
+            0
+        ]=> array(16) {
+            [
+                "id"
+            ]=> string(1) "4" [
+                "titulo"
+            ]=> string(15) "Lenovo Idealpad" [
+                "descricao"
+            ]=> string(97) "Lenovo Idealpad 330 Intel i7 Intel i7 6500U Laptop Windows 10 OS Dedicated Graphics Card 8GB RAM " [
+                "categoria"
+            ]=> string(10) "Tecnologia" [
+                "subcategoria"
+            ]=> string(12) "Computadores" [
+                "info_adicional"
+            ]=> string(0) "" [
+                "data"
+            ]=> string(19) "2019-07-29 23:07:20" [
+                "preco"
+            ]=> string(5) "59999" [
+                "negociavel"
+            ]=> string(1) "0" [
+                "troca"
+            ]=> string(1) "0" [
+                "views"
+            ]=> string(1) "0" [
+                "estado"
+            ]=> string(1) "1" [
+                "id_vendedor"
+            ]=> string(1) "2" [
+                "localizacao_anunciante"
+            ]=> string(16) "Maputo Magoanine" [
+                "nome_anunciante"
+            ]=> string(15) "Flossy Giroflex" [
+                "foto"
+            ]=> string(22) "laptop4_oqwjrnywkp.jpg"
+        } [
+            1
+        ]=> array(16) {
+            [
+                "id"
+            ]=> string(1) "5" [
+                "titulo"
+            ]=> string(19) "Samsung Galaxy S10+" [
+                "descricao"
+            ]=> string(78) "Samsung Galaxy S10+ 6.4” Quad HD+ Dynamic AMOLED Infinity Display Screen ROM" [
+                "categoria"
+            ]=> string(10) "Tecnologia" [
+                "subcategoria"
+            ]=> string(12) "Computadores" [
+                "info_adicional"
+            ]=> string(0) "" [
+                "data"
+            ]=> string(19) "2019-07-30 03:07:35" [
+                "preco"
+            ]=> string(5) "40000" [
+                "negociavel"
+            ]=> string(1) "1" [
+                "troca"
+            ]=> string(1) "0" [
+                "views"
+            ]=> string(1) "0" [
+                "estado"
+            ]=> string(1) "1" [
+                "id_vendedor"
+            ]=> string(1) "2" [
+                "localizacao_anunciante"
+            ]=> string(16) "Maputo Magoanine" [
+                "nome_anunciante"
+            ]=> string(15) "Flossy Giroflex" [
+                "foto"
+            ]=> string(22) "mobile3_neecldbbhl.jpg"
+        } [
+            2
+        ]=> array(16) {
+            [
+                "id"
+            ]=> string(1) "6" [
+                "titulo"
+            ]=> string(11) "SAMSUNG SSD" [
+                "descricao"
+            ]=> string(93) "SAMSUNG SSD 860 EVO 250GB 500GB 1TB 2TB Internal Solid State Drives HDD Hard Drive SATA3 2.5 " [
+                "categoria"
+            ]=> string(10) "Tecnologia" [
+                "subcategoria"
+            ]=> string(12) "Computadores" [
+                "info_adicional"
+            ]=> string(0) "" [
+                "data"
+            ]=> string(19) "2019-07-30 03:07:56" [
+                "preco"
+            ]=> string(4) "2500" [
+                "negociavel"
+            ]=> string(1) "1" [
+                "troca"
+            ]=> string(1) "0" [
+                "views"
+            ]=> string(1) "0" [
+                "estado"
+            ]=> string(1) "1" [
+                "id_vendedor"
+            ]=> string(1) "2" [
+                "localizacao_anunciante"
+            ]=> string(16) "Maputo Magoanine" [
+                "nome_anunciante"
+            ]=> string(15) "Flossy Giroflex" [
+                "foto"
+            ]=> string(21) "acess2_nylrmqclpo.jpg"
+        } [
+            3
+        ]=> array(16) {
+            [
+                "id"
+            ]=> string(1) "7" [
+                "titulo"
+            ]=> string(10) "Xbox One X" [
+                "descricao"
+            ]=> string(28) "Microsoft Xbox One X 1024 GB" [
+                "categoria"
+            ]=> string(10) "Tecnologia" [
+                "subcategoria"
+            ]=> string(21) "Videojogos - Consolas" [
+                "info_adicional"
+            ]=> string(0) "" [
+                "data"
+            ]=> string(19) "2019-07-30 03:07:04" [
+                "preco"
+            ]=> string(5) "11000" [
+                "negociavel"
+            ]=> string(1) "1" [
+                "troca"
+            ]=> string(1) "0" [
+                "views"
+            ]=> string(1) "0" [
+                "estado"
+            ]=> string(1) "1" [
+                "id_vendedor"
+            ]=> string(1) "2" [
+                "localizacao_anunciante"
+            ]=> string(16) "Maputo Magoanine" [
+                "nome_anunciante"
+            ]=> string(15) "Flossy Giroflex" [
+                "foto"
+            ]=> string(23) "console3_vekwlybdng.jpg"
+        }
+    } [
+        "tipo_cartao"
+    ]=> string(19) "horizontal_complete" [
+        "pagina"
+    ]=> array(6) {
+        [
+            "titulo"
+        ]=> string(10) "Tecnologia" [
+            "imgs"
+        ]=> string(43) "http://localhost/_CI/QuickSales/assets/img/" [
+            "img_perfil"
+        ]=> string(61) "http://localhost/_CI/QuickSales/assets/userdata/fotos/perfil/" [
+            "img_anuncio"
+        ]=> string(62) "http://localhost/_CI/QuickSales/assets/userdata/fotos/anuncio/" [
+            "botaoDesejo"
+        ]=> bool(true) [
+            "botaoDelete"
+        ]=> bool(false)
+    } [
+        "ordem"
+    ]=> string(5) "views"
+}
+
