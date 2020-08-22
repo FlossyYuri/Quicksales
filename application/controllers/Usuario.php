@@ -473,6 +473,8 @@ class Usuario extends CI_Controller
         } else {
             $anuncios = array();
         }
+        header('Access-Control-Allow-Origin: *');
+        header('Content-type:application/json');
         echo json_encode($anuncios, JSON_UNESCAPED_UNICODE);
     }
 }

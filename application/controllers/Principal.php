@@ -364,4 +364,12 @@ class Principal extends CI_Controller
         $this->geral->update('usuario', 'interesses', '', array('interesses' => '[9,12,17,18]'));
         redirect("principal");
     }
+
+    public function corrigirLinks()
+    {
+        $fotos = $this->geral->get_opcoes('imagem');
+        foreach ($fotos as $foto) {
+            $this->geral->update_opcao('imagem', $foto['id'], array('nome' => str_replace("projects", "deployed", $foto['nome'])));
+        }
+    }
 }

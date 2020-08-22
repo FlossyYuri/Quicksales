@@ -22,7 +22,7 @@ class Anuncio extends CI_Controller
       $anuncios_recentes[$cont] = $anuncio;
       $cont++;
     endforeach;
-
+    header('Content-Type: application/json');
     echo json_encode($anuncios_recentes, JSON_UNESCAPED_UNICODE);
   }
   public function getById($id)
@@ -34,8 +34,7 @@ class Anuncio extends CI_Controller
     $anuncios_recentes['localizacao_anunciante'] = $anunciante['localizacao'];
     $anuncios_recentes['nome_anunciante'] = $anunciante['nome'];
     $anuncios_recentes['foto'] = $this->geral->pesquisa('imagem', array('id_anuncio' => $anuncios_recentes['id']));
-
-
+    header('Content-Type: application/json');
     echo json_encode($anuncios_recentes, JSON_UNESCAPED_UNICODE);
   }
 
@@ -54,6 +53,8 @@ class Anuncio extends CI_Controller
       $anuncios[$cont] = $anuncio;
       $cont++;
     endforeach;
+
+    header('Content-Type: application/json');
     echo json_encode($anuncios, JSON_UNESCAPED_UNICODE);
   }
 }
