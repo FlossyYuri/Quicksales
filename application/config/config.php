@@ -25,14 +25,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 
 $whitelist = array(
-    '127.0.0.1',
-    '::1'
+  '127.0.0.1',
+  '::1'
 );
 
 if (!in_array($_SERVER['REMOTE_ADDR'], $whitelist)) {
-    $config['base_url'] = 'https://quicksales.co.mz/';
+  $config['base_url'] = 'https://ejitech.co.mz/';
 } else {
-    $config['base_url'] = 'http://localhost/projects/QuickSales/';
+  $config['base_url'] = 'http://localhost/projects/QuickSales/';
 }
 
 
