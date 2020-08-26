@@ -30,9 +30,9 @@ $whitelist = array(
 );
 
 if (!in_array($_SERVER['REMOTE_ADDR'], $whitelist)) {
-  $config['base_url'] = 'http://quicksales.yuris.co.mz/';
+  $config['base_url'] = 'https://quicksales.yuris.co.mz/';
 } else {
-  $config['base_url'] = 'http://localhost/deployed/QuickSales/';
+  $config['base_url'] = 'https://localhost/deployed/QuickSales/';
 }
 
 
