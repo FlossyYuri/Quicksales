@@ -57,4 +57,77 @@ class Anuncio extends CI_Controller
     header('Content-Type: application/json');
     echo json_encode($anuncios, JSON_UNESCAPED_UNICODE);
   }
+  public function post()
+  {
+    $response['type'] = "ok";
+    $response['message'] = "";
+    $this->load->helper('form');
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('titulo', 'Titulo do anuncio', 'required|min_length[5]|max_length[100]|trim');
+    $this->form_validation->set_rules('categoria', 'Categoria do anuncio', 'required|max_length[50]|trim');
+    $this->form_validation->set_rules('subcategoria', 'Subcategoria do anuncio', 'required|max_length[50]|trim');
+    $this->form_validation->set_rules('preco', 'Preço do anuncio', 'required|trim');
+    $this->form_validation->set_rules('descricao', 'Descrição do anuncio', 'required|trim|min_length[10]|max_length[5000]');
+    $this->form_validation->set_rules('id_vendedor', 'ID do anunciante', 'required|trim');
+    $this->form_validation->set_rules('venda', 'Venda', 'required|trim');
+    if ($this->form_validation->run() == FALSE) :
+      $this->form_validation->set_error_delimiters('|', '|');
+      $response['type'] = "validacao";
+      $response['message'] = validation_errors();
+    else :
+      $config = array(
+        'upload_path' => './assets/userdata/fotos/anuncio/',
+        'allowed_types' => 'jpg|png|jpeg',
+        'max-size' => 4096,
+        'max-width' => 3000,
+        'max-height' => 3000
+      );
+      $foto['nome'] = [];
+      $foto['prioridade'] = [];
+      $errors = "";
+      $this->load->library('image_lib');
+      for ($i = 0; $i < 6; $i++) {
+        if (isset($_FILES["imagem$i"]) && strlen($_FILES["imagem$i"]['name']) > 0) {
+          $ficheiro = $_FILES["imagem$i"]['name'];
+          $file_name = pathinfo($ficheiro, PATHINFO_FILENAME);
+          $file_ext = pathinfo($ficheiro, PATHINFO_EXTENSION);
+          $this->load->helper('inputs');
+          $nomeCompleto = definir_nome_ficheiro($file_name, $file_ext);
+          $config['file_name'] = $nomeCompleto;
+          array_push($foto['nome'], base_url("assets/userdata/fotos/anuncio/" . $nomeCompleto));
+          array_push($foto['prioridade'], $i);
+          $this->load->library('upload');
+          $this->upload->initialize($config);
+          if ($this->upload->do_upload("imagem$i")) :
+            // criar thumbnail
+            $config2['image_library']  = 'gd2';
+            $config2['source_image']   = './assets/userdata/fotos/anuncio/' . $nomeCompleto;
+            $config2['new_image'] = './assets/userdata/fotos/thumbs/';
+            $config2['thumb_marker'] = false;
+            $config2['create_thumb']   = TRUE;
+            $config2['maintain_ratio'] = TRUE;
+            $config2['width']          = 300;
+            $config2['height']         = 300;
+            $this->image_lib->clear();
+            $this->image_lib->initialize($config2);
+            $this->image_lib->resize();
+          // Uploaded and resized
+          else :
+            $errors = $errors . $this->upload->display_errors('|', '|');
+          endif;
+        }
+      }
+      if (strlen($errors) > 0) {
+        $response['type'] = "foto";
+        $response['message'] = $errors;
+      } else {
+        // cadastrar todos dados
+        $this->load->model('usuario_model', 'usuario');
+        $id_anuncio = $this->usuario->anunciar($foto);
+        $response['type'] = "ok";
+        $response['message'] = base_url('principal/produto/') . $id_anuncio;
+      }
+    endif;
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
+  }
 }
