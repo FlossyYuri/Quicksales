@@ -419,15 +419,71 @@ class Usuario extends CI_Controller
         $usuarios = $this->geral->get_opcoes('usuario');
         echo  json_encode($usuarios, JSON_UNESCAPED_UNICODE);
     }
-    public function getByID($id)
+    public function login()
     {
-        $usuario = $this->geral->get_opcoes('usuario', array("id" => $id))[0];
-        echo  json_encode($usuario, JSON_UNESCAPED_UNICODE);
+        $response = array("type" => "error", "message" => "nothing happened");
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('senha', 'Senha', 'required|min_length[8]');
+        if ($this->form_validation->run() == FALSE) :
+            //Erro no cadastro
+            $this->form_validation->set_error_delimiters('', '');
+            $response['type'] = 'bad';
+            $response['message'] = validation_errors();
+        else :
+            //entrar
+            $usuario = $this->geral->pesquisa('usuario', array(
+                "email" => $this->input->post('email'),
+                "senha" => $this->input->post('senha')
+            ));
+            if (count($usuario) > 0) {
+                $response['type'] = 'ok';
+                $response['message'] = 'Logado com sucesso';
+                $response['user'] = $usuario[0];
+            } else {
+                $response['type'] = 'bad';
+                $response['message'] = 'Dados invalidos. Tente novamente!';
+            }
+        endif;
+        echo  json_encode($response, JSON_UNESCAPED_UNICODE);
     }
-    public function salvar()
+    public function post()
     {
-        $usuarios = $this->geral->get_opcoes('usuario');
-        echo  json_encode($usuarios, JSON_UNESCAPED_UNICODE);
+        $response = array("type" => "error", "message" => "nothing happened");
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[usuario.email]');
+        $this->form_validation->set_rules('senha', 'Senha', 'required|min_length[8]');
+        $this->form_validation->set_rules('localizacao', 'Localizacao', 'required');
+        $this->form_validation->set_rules('nome', 'Nome do Usuario', 'required|min_length[6]|max_length[50]|trim|is_unique[usuario.nome]');
+        $this->form_validation->set_rules('telefone', 'Telefone', 'required|min_length[9]|max_length[13]|trim|is_unique[usuario.telefone]');
+        if ($this->form_validation->run() == FALSE) :
+            //Erro no cadastro
+            $this->form_validation->set_error_delimiters('|', '|');
+            $response['type'] = 'bad';
+            $response['message'] = validation_errors();
+        else :
+            //cadastrar
+            if ($this->usuario->cadastrar() > 0) :
+                $usuario = $this->geral->pesquisa('usuario', array(
+                    "email" => $this->input->post('email'),
+                    "senha" => $this->input->post('senha')
+                ));
+                if (count($usuario) > 0) {
+                    $response['type'] = 'ok';
+                    $response['message'] = 'Cadastro realizado com sucesso';
+                    $response['user'] = $usuario[0];
+                } else {
+                    $response['type'] = 'bad';
+                    $response['message'] = 'O usuario não foi encontrado';
+                }
+            else :
+                $response['type'] = 'bad';
+                $response['message'] = 'O usuario não foi cadastrado';
+            endif;
+        endif;
+        echo  json_encode($response, JSON_UNESCAPED_UNICODE);
     }
     public function atualizar()
     {

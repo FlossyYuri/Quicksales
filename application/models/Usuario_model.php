@@ -66,7 +66,7 @@ class Usuario_model extends CI_Model
             'negociavel' => $negociavel,
             'troca' => $troca,
             'views' => 0,
-            'id_vendedor' => $this->session->userdata('usuario')->id,
+            'id_vendedor' => $this->session->userdata('usuario') == null ? $this->input->post('id_vendedor') : $this->session->userdata('usuario')->id,
             'data' => date('Y-m-d H:m:s')
         );
         $this->db->insert('anuncio', $dados_anuncio);
@@ -111,7 +111,6 @@ class Usuario_model extends CI_Model
                 'prioridade' => $fotos[$i]->prioridade,
             );
             $this->db->where('nome', $fotos[$i]->url)->update('imagem', $dados_foto);
-            
         }
 
         return $id_anuncio;
