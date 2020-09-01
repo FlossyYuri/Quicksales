@@ -431,6 +431,7 @@ class Usuario extends CI_Controller
             $this->form_validation->set_error_delimiters('', '');
             $response['type'] = 'bad';
             $response['message'] = validation_errors();
+            $response['inputs'] = $this->input->post('email') . ' + ' . $this->input->post('senha');
         else :
             //entrar
             $usuario = $this->geral->pesquisa('usuario', array(
