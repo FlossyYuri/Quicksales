@@ -14,12 +14,14 @@ class Api extends CI_Controller
     for ($i = 0; $i < count($categorias); $i++) {
       $categorias[$i]['subcategorias'] = $this->geral->get_opcoes('filtro', array('nome' => 'subcategoria', 'referencia' => $categorias[$i]['id']));
     }
+    header('Content-type:application/json');
     echo json_encode($categorias, JSON_UNESCAPED_UNICODE);
   }
   public function getCategoria($id)
   {
     $categoria = $this->geral->get_opcoes('filtro', array('nome' => 'categoria', 'id' => $id))[0];
     $categoria['subcategorias'] = $this->geral->get_opcoes('filtro', array('nome' => 'subcategoria', 'referencia' => $id));
+    header('Content-type:application/json');
     echo json_encode($categoria, JSON_UNESCAPED_UNICODE);
   }
 }
