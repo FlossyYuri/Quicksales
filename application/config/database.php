@@ -76,6 +76,7 @@ $whitelist = array(
 );
 if (!in_array($_SERVER['REMOTE_ADDR'], $whitelist)) {
 	$active_group = 'mocha';
+	$active_group = 'demo';
 } else {
 	$active_group = 'default';
 }
@@ -108,6 +109,27 @@ $db['mocha'] = array(
 	'username' => 'flossy_usuario',
 	'password' => 'benorace13',
 	'database' => 'flossy_quicksales',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+$db['demo'] = array(
+	'dsn'	=> '',
+	'hostname' => 'mysql3001.mochahost.com',
+	'username' => 'flossy_usuario',
+	'password' => 'benorace13',
+	'database' => 'flossy_quicksales_demo',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
