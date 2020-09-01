@@ -128,6 +128,7 @@ class Anuncio extends CI_Controller
         $response['message'] = base_url('principal/produto/') . $id_anuncio;
       }
     endif;
+    header('Content-type:application/json');
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
   }
 }

@@ -417,6 +417,7 @@ class Usuario extends CI_Controller
     public function get()
     {
         $usuarios = $this->geral->get_opcoes('usuario');
+        header('Content-type:application/json');
         echo  json_encode($usuarios, JSON_UNESCAPED_UNICODE);
     }
     public function login()
@@ -447,6 +448,7 @@ class Usuario extends CI_Controller
                 $response['message'] = 'Dados invalidos. Tente novamente!';
             }
         endif;
+        header('Content-type:application/json');
         echo  json_encode($response, JSON_UNESCAPED_UNICODE);
     }
     public function post()
@@ -484,11 +486,13 @@ class Usuario extends CI_Controller
                 $response['message'] = 'O usuario não foi cadastrado';
             endif;
         endif;
+        header('Content-type:application/json');
         echo  json_encode($response, JSON_UNESCAPED_UNICODE);
     }
     public function atualizar()
     {
         $usuarios = $this->geral->get_opcoes('usuario');
+        header('Content-type:application/json');
         echo  json_encode($usuarios, JSON_UNESCAPED_UNICODE);
     }
     public function meusAnuncios($id = 0)
@@ -509,6 +513,7 @@ class Usuario extends CI_Controller
         } else {
             $anuncios = array();
         }
+        header('Content-type:application/json');
         echo json_encode($anuncios, JSON_UNESCAPED_UNICODE);
     }
     public function meusDesejos($id = 0)
